@@ -16,7 +16,7 @@ import { SignIn, SignedOut, SignUpButton, SignInButton } from "@clerk/nextjs";
 */
 export default function Example() {
   return (
-    <div className="flex justify-center items-center h-full z">
+    <div className="flex justify-center items-center h-full ">
       <SignIn routing="hash">
         <SignUpButton />
       </SignIn>
