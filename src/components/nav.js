@@ -397,11 +397,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default function Example({ pathname }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white">
+    <div className={`bg-white ${pathname === "/login" ? "blur-md" : ""}`}>
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -563,10 +563,7 @@ export default function Example() {
           </form>
 
           <div className="flex items-center space-x-6">
-            <a
-              href="/login"
-              className="text-sm font-medium text-white hover:text-gray-100"
-            >
+            <div className="text-sm font-medium text-white hover:text-gray-100">
               <button>
                 {" "}
                 <SignedIn routing="hash">
@@ -574,8 +571,12 @@ export default function Example() {
                 </SignedIn>
               </button>
 
-              <SignedOut>Sign In</SignedOut>
-            </a>
+              <SignedOut>
+                <button>
+                  <a href="/login"> Sign In</a>
+                </button>
+              </SignedOut>
+            </div>
           </div>
         </div>
       </div>
