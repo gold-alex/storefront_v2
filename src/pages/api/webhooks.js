@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   const payload = (await buffer(req, res)).toString();
   const headers = req.headers;
 
-  const wh = new Webhook(secret);
+  const wh = new Webhook(webhookSecret);
   let msg;
   try {
     msg = wh.verify(payload, headers);
