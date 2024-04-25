@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Nav from "@/components/nav";
-import "@/styles/globals.css";
+import Nav from "../components/nav";
+import "../styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 
 export default function App({ Component, pageProps }) {

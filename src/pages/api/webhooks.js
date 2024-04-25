@@ -1,12 +1,12 @@
 import { Webhook } from "svix";
 
-// async function buffer(readable) {
-//   const chunks = [];
-//   for await (const chunk of readable) {
-//     chunks.push(typeof chunk === "string" ? Buffer.from(chunk) : chunk);
-//   }
-//   return Buffer.concat(chunks);
-// }
+async function buffer(readable) {
+  const chunks = [];
+  for await (const chunk of readable) {
+    chunks.push(typeof chunk === "string" ? Buffer.from(chunk) : chunk);
+  }
+  return Buffer.concat(chunks);
+}
 
 export const config = {
   api: {
