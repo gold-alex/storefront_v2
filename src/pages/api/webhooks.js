@@ -25,13 +25,22 @@ export default async function handler(req, res) {
 
   const eventType = msg.type;
   if (eventType === "user.created" || eventType === "user.updated") {
-    const { id, first_name, last_name, username, phone_number } = msg.data;
+    const {
+      data: {
+        email_addresses: [{ email_address }],
+      },
+      id,
+      first_name,
+      last_name,
+      username,
+      phone_number,
+    } = msg.data;
 
     await prisma.comment.upsert({
       where: { externalId: id },
       create: {
         externalId: id,
-        email: first_name,
+        email: email_address,
         firstName: first_name,
         lastName: last_name,
         phone: phone_number ? phone_number : "missing",
