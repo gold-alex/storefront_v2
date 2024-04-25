@@ -16,15 +16,16 @@ export default async function handler(req, res) {
 
   const wh = new Webhook(webhookSecret);
   let msg;
+
   try {
     msg = wh.verify(payload, headers);
   } catch (err) {
     res.status(400).json({});
   }
 
-  const eventType = evt.type;
+  const eventType = msg.type;
   if (eventType === "user.created" || eventType === "user.updated") {
-    const { id, first_name, last_name, username, phone_number } = evt.data;
+    const { id, first_name, last_name, username, phone_number } = msg.data;
 
     await prisma.comment.upsert({
       where: { externalId: id },
