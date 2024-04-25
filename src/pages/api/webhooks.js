@@ -42,7 +42,7 @@ export default async function handler(req, res) {
         email: first_name,
         firstName: first_name,
         lastName: last_name,
-        phone: phone_number,
+        phone: phone_number ? phone_number : "missing",
 
         username: username,
       },
