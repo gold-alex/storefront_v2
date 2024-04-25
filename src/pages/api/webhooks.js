@@ -26,9 +26,8 @@ export default async function handler(req, res) {
   const eventType = msg.type;
   if (eventType === "user.created" || eventType === "user.updated") {
     const {
-      data: {
-        email_addresses: [{ email_address }],
-      },
+      email_addresses: [{ email_address }],
+
       id,
       first_name,
       last_name,
