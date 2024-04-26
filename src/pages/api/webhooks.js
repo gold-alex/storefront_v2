@@ -20,7 +20,10 @@ export default async function handler({ body, headers }) {
   try {
     msg = wh.verify(payload, headers);
   } catch (err) {
-    res.status(400).json({});
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ success: false, error: err.message }),
+    };
   }
 
   const eventType = msg.type;
@@ -53,6 +56,10 @@ export default async function handler({ body, headers }) {
         username: username,
       },
     });
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ success: true }),
+    };
   }
 }
 
