@@ -1,5 +1,5 @@
 // @ts-ignore
-import { prisma } from "@/lib/db";
+import { prisma } from "../../../lib/db";
 
 import { Webhook } from "svix";
 import { buffer } from "micro";
