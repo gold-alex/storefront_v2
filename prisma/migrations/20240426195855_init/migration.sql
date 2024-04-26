@@ -7,6 +7,7 @@ CREATE TABLE "User" (
     "email_address" TEXT NOT NULL,
     "phone_number" TEXT NOT NULL,
     "username" TEXT NOT NULL,
+    "birthday" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
