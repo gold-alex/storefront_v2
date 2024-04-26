@@ -46,11 +46,10 @@ export default async function handler(req, res) {
         username: username,
       },
       update: {
-        email: email_address,
-        firstName: first_name,
-        lastName: last_name,
-        phone: phone_number || "missing",
-
+        email_address: email_address,
+        first_name: first_name,
+        last_name: last_name,
+        phone_number: phone_number || "missing",
         username: username,
       },
     });
