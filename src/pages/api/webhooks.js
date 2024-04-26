@@ -47,7 +47,7 @@ export default async function handler(req, res) {
         username: username,
       },
       update: {
-        email: first_name,
+        email: email_address,
         firstName: first_name,
         lastName: last_name,
         phone: phone_number ? phone_number : "missing",
