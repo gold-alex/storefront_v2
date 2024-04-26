@@ -56,6 +56,7 @@ export default async function handler(req, res) {
       },
     });
   }
+  res.json({});
 }
 
 export const GET = handler;
