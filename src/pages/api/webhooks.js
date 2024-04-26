@@ -12,7 +12,7 @@ const webhookSecret = process.env.WEBHOOK_SECRET;
 
 export default async function handler({ body, headers }) {
   let payload = body;
-  let headers = req.headers;
+  // let headers = req.headers;
 
   const wh = new Webhook(webhookSecret);
   let msg;
