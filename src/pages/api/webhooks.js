@@ -8,7 +8,7 @@ export const config = {
   },
 };
 
-const webhookSecret = "wwhsec_q4+uWgFZliJwqE+dUlQGLcUtDWNEYiQN";
+const webhookSecret = process.env.WEBHOOK_SECRET;
 
 export default async function handler(req, res) {
   const payload = (await buffer(req)).toString();
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
         email_address: email_address,
         first_name: first_name,
         last_name: last_name,
-        phone_number: phone_number || "missing",
+        phone_number: phone_number ? phone_number : "missing",
 
         username: username,
       },
@@ -49,12 +49,11 @@ export default async function handler(req, res) {
         email_address: email_address,
         first_name: first_name,
         last_name: last_name,
-        phone_number: phone_number || "missing",
+        phone_number: phone_number ? phone_number : "missing",
         username: username,
       },
     });
   }
-  res.json({});
 }
 
 export const GET = handler;
