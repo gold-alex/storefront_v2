@@ -1,5 +1,6 @@
 // @ts-ignore
-import { prisma } from "../../../lib/db";
+import { prisma } from "@/lib/db";
+
 import { Webhook } from "svix";
 import { buffer } from "micro";
 export const config = {
@@ -27,7 +28,6 @@ export default async function handler(req, res) {
   if (eventType === "user.created") {
     const {
       email_addresses: [{ email_address }],
-
       id,
       first_name,
       last_name,
