@@ -1,4 +1,3 @@
-// @ts-ignore
 import { prisma } from "../../../lib/db";
 
 import { Webhook } from "svix";
@@ -35,14 +34,14 @@ export default async function handler(req, res) {
       phone_number,
     } = msg.data;
 
-    await prisma.comment.upsert({
+    await prisma.user.upsert({
       where: { externalId: id },
       create: {
         externalId: id,
-        email: email_address,
-        firstName: first_name,
-        lastName: last_name,
-        phone: phone_number || "missing",
+        email_address: email_address,
+        first_name: first_name,
+        last_name: last_name,
+        phone_number: phone_number || "missing",
 
         username: username,
       },
