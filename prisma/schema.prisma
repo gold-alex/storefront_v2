@@ -18,7 +18,7 @@ datasource db {
 
 model Comment {
   id      Int    @id @default(autoincrement())
-  externalId   String 
+  externalId   String @unique
   firstName String
   lastName String
   phone String
