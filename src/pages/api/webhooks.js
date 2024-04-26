@@ -10,9 +10,9 @@ export const config = {
 
 const webhookSecret = process.env.WEBHOOK_SECRET;
 
-export default async function handler({ body, headers }) {
-  let payload = body;
-  // let headers = req.headers;
+export default async function handler(req, res) {
+  const payload = (await buffer(req)).toString();
+  const headers = req.headers;
 
   const wh = new Webhook(webhookSecret);
   let msg;
@@ -20,10 +20,7 @@ export default async function handler({ body, headers }) {
   try {
     msg = wh.verify(payload, headers);
   } catch (err) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ success: false, error: err.message }),
-    };
+    res.status(400).json({});
   }
 
   const eventType = msg.type;
@@ -56,10 +53,6 @@ export default async function handler({ body, headers }) {
         username: username,
       },
     });
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ success: true }),
-    };
   }
 }
 
