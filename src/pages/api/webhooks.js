@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       first_name,
       last_name,
       username,
-      phone_number,
+      phone_number: [one],
     } = msg.data;
 
     await prisma.user.upsert({
@@ -42,7 +42,7 @@ export default async function handler(req, res) {
         email_address: email_address,
         first_name: first_name,
         last_name: last_name,
-        phone_number: phone_number ? phone_number : "missing",
+        phone_number: one ? one : "missing",
         birthday: "missing",
         username: username,
       },
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
         email_address: email_address,
         first_name: first_name,
         last_name: last_name,
-        phone_number: phone_number ? phone_number : "missing",
+        phone_number: one ? one : "missing",
         birthday: "missing",
         username: username,
       },
