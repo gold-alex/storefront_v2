@@ -24,6 +24,9 @@ import {
 } from "@heroicons/react/24/outline";
 
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { Heart, ShoppingBag } from "lucide-react";
+import MyOrders from "./MyOrders";
+import SavedItems from "./saveditems";
 
 const navigation = {
   categories: [
@@ -571,7 +574,24 @@ export default function Example({ pathname }) {
               <button>
                 {" "}
                 <SignedIn routing="hash">
-                  <UserButton />
+                  <UserButton>
+                    <UserButton.UserProfilePage label="account" />
+                    <UserButton.UserProfilePage
+                      label="My Orders"
+                      url="/orders"
+                      labelIcon={<ShoppingBag size={16} />}
+                    >
+                      <MyOrders />
+                    </UserButton.UserProfilePage>
+                    <UserButton.UserProfilePage
+                      label="Saved Items"
+                      url="/saveditems"
+                      labelIcon={<Heart size={16} />}
+                    >
+                      <SavedItems />
+                    </UserButton.UserProfilePage>
+                    <UserButton.UserProfilePage label="security" />
+                  </UserButton>
                 </SignedIn>
               </button>
 
@@ -778,7 +798,22 @@ export default function Example({ pathname }) {
                   <span className="sr-only">Account</span>
                   <SignedIn routing="hash">
                     <UserButton>
-                      <UserIcon className="h-6 w-6" aria-hidden="true" />
+                      <UserButton.UserProfilePage label="account" />
+                      <UserButton.UserProfilePage
+                        label="My Orders"
+                        url="/orders"
+                        labelIcon={<ShoppingBag size={16} />}
+                      >
+                        <MyOrders />
+                      </UserButton.UserProfilePage>
+                      <UserButton.UserProfilePage
+                        label="Saved Items"
+                        url="/saveditems"
+                        labelIcon={<Heart size={16} />}
+                      >
+                        <SavedItems />
+                      </UserButton.UserProfilePage>
+                      <UserButton.UserProfilePage label="security" />
                     </UserButton>
                   </SignedIn>
                 </a>

@@ -27,14 +27,14 @@ export default function Example() {
   }, [router]);
 
   return (
-    <div className="relative h-full">
+    <div className="relative  ">
       {/* Container for the blurred background */}
-      <div className="absolute inset-0 blur-md bg-white"></div>
+      <div className="absolute inset-0 blur-md bg-white left-0 right-0"></div>
 
       {/* Container for the SignIn component */}
       <div
         ref={containerRef}
-        className="flex justify-center items-center h-full"
+        className="flex justify-center items-center h-full w-full"
       >
         <SignIn routing="hash">
           <SignUpButton />
