@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       first_name,
       last_name,
       username,
-      phone_number: [one],
+      phone_numbers: [one],
     } = msg.data;
 
     await prisma.user.upsert({
