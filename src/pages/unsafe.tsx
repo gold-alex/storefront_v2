@@ -19,7 +19,7 @@ export default function UnSafePage() {
     // Navigate to the home page after updating the birthday
     router.push("/");
   };
-
+  console.log(user);
   return (
     <div className="flex justify-center items-center h-[100vh] bg-white">
       <div className="w-[60vh] flex flex-col items-center">

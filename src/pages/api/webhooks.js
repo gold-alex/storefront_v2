@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       first_name,
       last_name,
       username,
-      unsafeMetadata: { birthday },
+      unsafe_metadata: { birthday },
     } = msg.data;
     const { phone_number } = msg.data.phone_numbers[0];
 
