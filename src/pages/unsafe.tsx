@@ -9,16 +9,21 @@ export default function UnSafePage() {
   const { user } = useUser();
   const [birthday, setBirthday] = useState(new Date());
 
-  const updateBirthday = () => {
-    user.update({
-      unsafeMetadata: {
-        birthday,
-      },
-    });
-
-    // Navigate to the home page after updating the birthday
-    router.push("/");
+  const updateBirthday = async () => {
+    try {
+      await user.update({
+        unsafeMetadata: {
+          birthday,
+        },
+      });
+      // Navigate to the home page after updating the birthday
+      router.push("/");
+    } catch (error) {
+      console.error("Error updating birthday:", error);
+      // Handle error if necessary
+    }
   };
+
   console.log(user);
   return (
     <div className="flex justify-center items-center h-[100vh] bg-white">
