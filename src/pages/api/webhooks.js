@@ -48,12 +48,12 @@ export default async function handler(req, res) {
         username: username,
       },
       update: {
-        // email_address: email_address,
-        // first_name: first_name,
-        // last_name: last_name,
-        // phone_number: phone_number ? phone_number : "missing",
+        email_address: email_address,
+        first_name: first_name,
+        last_name: last_name,
+        phone_number: phone_number ? phone_number : "missing",
         // birthday: birthday ? birthday : "missing",
-        // username: username,
+        username: username,
       },
     });
   }
