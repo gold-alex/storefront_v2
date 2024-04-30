@@ -25,7 +25,7 @@ export default async function handler(req, res) {
   }
 
   const eventType = msg.type;
-  if (eventType === "user.created") {
+  if (eventType === "user.created" || eventType === "user.updated") {
     const {
       email_addresses: [{ email_address }],
       id,
