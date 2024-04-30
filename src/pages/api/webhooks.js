@@ -52,7 +52,7 @@ export default async function handler(req, res) {
         first_name: first_name,
         last_name: last_name,
         phone_number: phone_number ? phone_number : "missing",
-        // birthday: birthday ? birthday : "missing",
+        birthday: birthday ? birthday : "missing",
         username: username,
       },
     });
