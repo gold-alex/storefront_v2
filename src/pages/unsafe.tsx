@@ -9,10 +9,10 @@ export default function UnSafePage() {
   const { user } = useUser();
   const [birthda, setBirthda] = useState(new Date());
 
-  const updateBirthday = () => {
+  const updateBirthday = async () => {
     const birthday = moment.utc(birthda).format("Do MMMM YYYY");
     try {
-      user.update({
+      await user.update({
         unsafeMetadata: {
           birthday,
         },
