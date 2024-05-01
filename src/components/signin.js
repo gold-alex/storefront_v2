@@ -16,6 +16,7 @@ export default function Example() {
     }
   };
 
+
   useEffect(() => {
     // Add event listener to listen for clicks outside the container
     document.addEventListener("click", handleClick);
@@ -29,17 +30,17 @@ export default function Example() {
   return (
     <div className="relative h-screen flex justify-center items-center">
       {/* Container for the blurred background */}
-      <div className="absolute inset-0 blur-md bg-white left-0 right-0"></div>
+      <div className=" absolute inset-0 blur-md bg-white left-0 right-0"></div>
 
       {/* Container for the SignIn component */}
-      <div className="relative" ref={containerRef}>
+      <div className="relative" ref={containerRef} style={{ top: '-85px' }}>
         <div className="absolute inset-0 flex justify-center items-center">
           <div>
             <SignIn routing="hash">
               <SignUpButton />
             </SignIn>
             <SignedOut>
-              <SignInButton />
+              {/* <SignInButton /> */}
             </SignedOut>
           </div>
         </div>
