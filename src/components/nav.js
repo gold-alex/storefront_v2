@@ -571,9 +571,9 @@ export default function Example({ pathname }) {
 
           <div className="flex items-center space-x-6">
             <div className="text-sm font-medium text-white hover:text-gray-100">
-              <button>
-                {" "}
-                <SignedIn routing="hash">
+              {/* <button> */}
+                {/* {" "} */}
+                {/* <SignedIn routing="hash">
                   <UserButton>
                     <UserButton.UserProfilePage label="account" />
                     <UserButton.UserProfilePage
@@ -592,8 +592,8 @@ export default function Example({ pathname }) {
                     </UserButton.UserProfilePage>
                     <UserButton.UserProfilePage label="security" />
                   </UserButton>
-                </SignedIn>
-              </button>
+                </SignedIn> */}
+              {/* </button> */}
 
               <SignedOut>
                 <button>
