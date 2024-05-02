@@ -602,7 +602,7 @@ export default function Example({ pathname }) {
               </SignedOut>
               <SignedIn>
               <button>
-                  <a href="/"> List Firearm</a>
+                  <a href="/"> Sell a Firearm</a>
               </button>
               </SignedIn>
             </div>
