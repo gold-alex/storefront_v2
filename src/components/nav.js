@@ -600,6 +600,11 @@ export default function Example({ pathname }) {
                   <a href="/login"> Sign In</a>
                 </button>
               </SignedOut>
+              <SignedIn>
+              <button>
+                  <a href="/"> List Firearm</a>
+              </button>
+              </SignedIn>
             </div>
           </div>
         </div>
