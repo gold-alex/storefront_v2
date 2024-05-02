@@ -792,7 +792,7 @@ export default function Example({ pathname }) {
 
                 {/* Account */}
                 <a
-                  href="#"
+                  // href="#"
                   className="p-2 text-gray-400 hover:text-gray-500 lg:ml-4"
                 >
                   <span className="sr-only">Account</span>

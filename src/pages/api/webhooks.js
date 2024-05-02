@@ -8,7 +8,7 @@ export const config = {
   },
 };
 
-const webhookSecret = "whsec_1DDBxnqmAHXGYv7lGFBvV2+bIR/O9SaN";
+const webhookSecret = "whsec_QbArH1LNsOT8MxHm3UahIhkZNTGQTKgO";
 
 export default async function handler(req, res) {
   const payload = (await buffer(req)).toString();
