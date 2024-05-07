@@ -571,30 +571,6 @@ export default function Example({ pathname }) {
 
           <div className="flex items-center space-x-6">
             <div className="text-sm font-medium text-white hover:text-gray-100">
-              {/* <button> */}
-                {/* {" "} */}
-                {/* <SignedIn routing="hash">
-                  <UserButton>
-                    <UserButton.UserProfilePage label="account" />
-                    <UserButton.UserProfilePage
-                      label="My Orders"
-                      url="/orders"
-                      labelIcon={<ShoppingBag size={16} />}
-                    >
-                      <MyOrders />
-                    </UserButton.UserProfilePage>
-                    <UserButton.UserProfilePage
-                      label="Saved Items"
-                      url="/saveditems"
-                      labelIcon={<Heart size={16} />}
-                    >
-                      <SavedItems />
-                    </UserButton.UserProfilePage>
-                    <UserButton.UserProfilePage label="security" />
-                  </UserButton>
-                </SignedIn> */}
-              {/* </button> */}
-
               <SignedOut>
                 <button>
                   <a href="/login"> Sign In</a>
